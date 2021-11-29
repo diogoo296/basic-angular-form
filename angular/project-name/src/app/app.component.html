@@ -1,3 +1,4 @@
+{{ formName.value | json }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,42 +11,44 @@
   <title>Friend List</title>
 </head>
 <body>
-  <div class="container" >
+  <div class="container" >    
     <div class="row text-center">
       <h1>Friend List</h1>
     </div>
     <div class="row">
-      <div class="col-6">
-        <div> 
-          <label>First name:</label>
-          <input type="text">
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" #formName="ngForm"></form>
+        <div class="col-6">
+          <div> 
+            <label>First name:</label>
+            <input type="text" name="firstName" #inputName="ngModel" ngModel>
+          </div>
+          
+          <div> 
+            <label>Last name:</label>
+            <input type="text" name="Lastname" #inputName="ngModel" ngModel>
+          </div>      
+          <div> 
+            <label>Email:</label>
+            <input type="text" name="email" #inputName="ngModel" ngModel>
+          </div>      
+          <div> 
+            <label>Phone number:</label>
+            <input type="text" name="phone" #inputName="ngModel" ngModel>
+          </div>
+          <div>
+            <label> Favourite language: </label>
+            <select name="languages" id="languages" ngModel>
+              <option> HTML </option>
+              <option> CSS </option>
+              <option> JAVASCRIPT </option>
+              <option> PHP </option>
+            </select>
+          </div>
+          <div>
+            <button class="button" type="submit">Submit</button>
+          </div>   
         </div>
-        
-        <div> 
-          <label>Last name:</label>
-          <input type="text">
-        </div>      
-        <div> 
-          <label>Email:</label>
-          <input type="text">
-        </div>      
-        <div> 
-          <label>Phone number:</label>
-          <input type="text">
-        </div>
-        <div>
-          <label> Favourite language: </label>
-          <select name="customers" id="customers">
-            <option> HTML </option>
-            <option> CSS </option>
-            <option> JAVASCRIPT </option>
-            <option> PHP </option>
-          </select>
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>   
-      </div>
+      </form>    
       <div class="col-6">
         <div>
           <h2> Friend </h2>
