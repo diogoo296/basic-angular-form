@@ -15,7 +15,7 @@
       <h1>{{title}}</h1>
     </div>
     <div class="row">
-      <form #friendForm="ngForm">
+      <form #friendForm="ngForm" (ngSubmit)="getFriend()">
         <div class="col-6">
           <div> 
             <label>First name:</label>
