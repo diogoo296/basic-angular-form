@@ -15,7 +15,7 @@
       <h1>{{title}}</h1>
     </div>
     <div class="row">
-      <form #formName="ngForm">
+      <form #friendForm="ngForm">
         <div class="col-6">
           <div> 
             <label>First name:</label>
@@ -83,7 +83,7 @@
             </select>
           </div>
           <div>
-            <button class="button" type="submit">Submit</button>
+            <button class="button" type="submit" [disabled]="friendForm.form.invalid">Submit</button>
           </div>   
         </div>      
         <!-- <div class="col-6">
