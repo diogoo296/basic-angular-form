@@ -1,12 +1,15 @@
 export class Friend {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    languages: string
 
-    function friend (firstName:string, lastName:string, email:string, phone:number, language:string): void {
-
+    constructor() { 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.language = language;
-        
+        this.languages = languages;
     }
 }
