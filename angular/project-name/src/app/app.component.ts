@@ -8,4 +8,7 @@ import { Friend } from './friend';
 })
 export class AppComponent {
   title = 'Friend List';
+  friend = new Friend("","","","","");
+
 }
+
