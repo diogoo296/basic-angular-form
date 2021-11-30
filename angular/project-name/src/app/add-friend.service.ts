@@ -12,9 +12,10 @@ export class AddFriendService {
 
   constructor(private http: HttpClient) { }
 
-  url= "http://localhost:4200/";
+  url= "http://localhost:9000/addFriend";
 
   addFriend(friend:Friend){
+    console.log(friend);
     return this.http.post(this.url, friend);
   }
 }
