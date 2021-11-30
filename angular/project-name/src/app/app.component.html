@@ -1,4 +1,4 @@
-{{ formName.value | json }}
+{{ friend | json }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,24 +19,24 @@
         <div class="col-6">
           <div> 
             <label>First name:</label>
-            <input type="text" name="firstName" #firstName="ngModel" ngModel>
+            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friend.firstName">
           </div>
           
           <div> 
             <label>Last name:</label>
-            <input type="text" name="lastName" #lastName="ngModel" ngModel>
+            <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="friend.lastName">
           </div>      
           <div> 
             <label>Email:</label>
-            <input type="text" name="email" #email="ngModel" ngModel>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="friend.email">
           </div>      
           <div> 
             <label>Phone number:</label>
-            <input type="text" name="phone" #phone="ngModel" ngModel>
+            <input type="text" name="phone" #phone="ngModel" [(ngModel)]="friend.phone">
           </div>
           <div>
             <label> Favourite language: </label>
-            <select name="languages" id="languages" #languages="ngModel" ngModel>
+            <select name="languages" id="languages" #languages="ngModel" [(ngModel)]="friend.languages">
               <option> HTML </option>
               <option> CSS </option>
               <option> JAVASCRIPT </option>
