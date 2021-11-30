@@ -19,24 +19,63 @@
         <div class="col-6">
           <div> 
             <label>First name:</label>
-            <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friend.firstName">
+            <input 
+              type="text" 
+              name="firstName" 
+              #firstName="ngModel" 
+              [(ngModel)]="friend.firstName"
+              [class.err]="firstName.invalid && firstName.touched"
+              pattern="[a-zA-Z ]*"
+              required="[a-zA-Z ]*"
+            >
           </div>
           
           <div> 
             <label>Last name:</label>
-            <input type="text" name="lastName" #lastName="ngModel" [(ngModel)]="friend.lastName">
+            <input 
+              type="text" 
+              name="lastName" 
+              #lastName="ngModel" 
+              [(ngModel)]="friend.lastName"
+              [class.err]="lastName.invalid && lastName.touched"
+              pattern="[a-zA-Z ]*"
+              required="[a-zA-Z ]*"
+            >
           </div>      
           <div> 
             <label>Email:</label>
-            <input type="text" name="email" #email="ngModel" [(ngModel)]="friend.email">
+            <input 
+              type="text" 
+              name="email" 
+              #email="ngModel" 
+              [(ngModel)]="friend.email"
+              [class.err]="email.invalid && email.touched"
+              pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              required="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+            >
           </div>      
           <div> 
             <label>Phone number:</label>
-            <input type="text" name="phone" #phone="ngModel" [(ngModel)]="friend.phone">
+            <input 
+              type="text" 
+              name="phone" 
+              #phone="ngModel" 
+              [(ngModel)]="friend.phone"
+              [class.err]="phone.invalid && phone.touched"
+              pattern="[0-9]*"
+              required maxlength="9"
+              required minlength="9"
+            >
           </div>
           <div>
             <label> Favourite language: </label>
-            <select name="languages" id="languages" #languages="ngModel" [(ngModel)]="friend.languages">
+            <select 
+              name="languages" 
+              id="languages" 
+              #languages="ngModel" 
+              [(ngModel)]="friend.languages"
+              [class.err]="languages.invalid && languages.touched"
+            >
               <option> HTML </option>
               <option> CSS </option>
               <option> JAVASCRIPT </option>
