@@ -12,7 +12,7 @@ export class AppComponent {
   friend = new Friend("","","","","");
 
   getFriend(){
-    this.addFriendService.addFriend(this.friend);
+    this.addFriendService.addFriend(this.friend).subscribe(data => "it worked", error => "it didn't work");
   }
 
   constructor(private addFriendService: AddFriendService){
