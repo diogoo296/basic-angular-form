@@ -5,7 +5,7 @@ export class Friend {
     phone: string;
     languages: string
 
-    constructor() { 
+    constructor(firstName: string, lastName: string, email: string, phone: string, languages: string) { 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
