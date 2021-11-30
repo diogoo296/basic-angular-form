@@ -10,5 +10,8 @@ export class AppComponent {
   title = 'Friend List';
   friend = new Friend("","","","","");
 
+  getFriend(){
+    console.log(this.friend);
+  }
 }
 
