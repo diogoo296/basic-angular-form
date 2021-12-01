@@ -77,12 +77,14 @@
                 [(ngModel)]="friend.languages"
                 [class.err]="languages.invalid && languages.touched"
                 pattern="[a-zA-Z ]*"
-                required="[a-zA-Z ]*"
+                required="[a-zA-Z ]*"                
               >
+                <!-- <option *ngFor="let language of languages" > {{language}} </option> -->
                 <option> HTML </option>
                 <option> CSS </option>
                 <option> JAVASCRIPT </option>
                 <option> PHP </option>
+
               </select>
             </div>
             <div>
