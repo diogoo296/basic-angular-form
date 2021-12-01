@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Friend } from './friend';
 import {AddFriendService} from "./add-friend.service";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   title = 'Friend List';
   friend = new Friend("","","","","");
 
-  getFriend(){
+  getFriend(friendForm: NgForm){
     this.addFriendService.addFriend(this.friend).subscribe(data => console.log("it worked"), error => console.log("it didn't work"));
     this.showFriends();
   }
