@@ -8,11 +8,15 @@ import {AddFriendService} from "./add-friend.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  languages:string[] = ["HTML","CSS","JAVASCRIPT","PHP"];
+
   title = 'Friend List';
   friend = new Friend("","","","","");
 
   getFriend(){
     this.addFriendService.addFriend(this.friend).subscribe(data => console.log("it worked"), error => console.log("it didn't work"));
+    this.showFriends();
   }
 
   constructor(private addFriendService: AddFriendService){
