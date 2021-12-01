@@ -1,3 +1,20 @@
 .err {
     border: solid red;
 }
+
+.container{
+    border: solid rgb(12, 240, 126);
+}
+
+.row{
+    padding: 20px;
+}
+
+input{
+    margin: 15px;
+}
+
+.button{
+    margin: 20px;
+    align-self: center;
+}
