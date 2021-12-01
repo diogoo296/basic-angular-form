@@ -10,101 +10,105 @@
   <title>{{title}}</title>
 </head>
 <body>
-  <div class="container" >    
-    <div class="row text-center">
-      <h1>{{title}}</h1>
-    </div>
-    <div class="row">
-      <form #friendForm="ngForm" (ngSubmit)="getFriend()">
-        <div class="col-6">
-          <div> 
-            <label>First name:</label>
-            <input 
-              type="text" 
-              name="firstName" 
-              #firstName="ngModel" 
-              [(ngModel)]="friend.firstName"
-              [class.err]="firstName.invalid && firstName.touched"
-              pattern="[a-zA-Z ]*"
-              required="[a-zA-Z ]*"
-            >
-          </div>
-          
-          <div> 
-            <label>Last name:</label>
-            <input 
-              type="text" 
-              name="lastName" 
-              #lastName="ngModel" 
-              [(ngModel)]="friend.lastName"
-              [class.err]="lastName.invalid && lastName.touched"
-              pattern="[a-zA-Z ]*"
-              required="[a-zA-Z ]*"
-            >
-          </div>      
-          <div> 
-            <label>Email:</label>
-            <input 
-              type="text" 
-              name="email" 
-              #email="ngModel" 
-              [(ngModel)]="friend.email"
-              [class.err]="email.invalid && email.touched"
-              pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-              required="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-            >
-          </div>      
-          <div> 
-            <label>Phone number:</label>
-            <input 
-              type="text" 
-              name="phone" 
-              #phone="ngModel" 
-              [(ngModel)]="friend.phone"
-              [class.err]="phone.invalid && phone.touched"
-              pattern="[0-9]*"
-              required maxlength="10"
-              required minlength="10"
-            >
-          </div>
-          <div>
-            <label> Favourite language: </label>
-            <select 
-              name="languages" 
-              id="languages" 
-              #languages="ngModel" 
-              [(ngModel)]="friend.languages"
-              [class.err]="languages.invalid && languages.touched"
-              pattern="[a-zA-Z ]*"
-              required="[a-zA-Z ]*"
-            >
-              <option> HTML </option>
-              <option> CSS </option>
-              <option> JAVASCRIPT </option>
-              <option> PHP </option>
-            </select>
-          </div>
-          <div>
-            <button class="button" type="submit" [disabled]="friendForm.form.invalid">Submit</button>
-          </div>   
-        </div>      
-        <div class="col-6">
-          <div>
-            <h2> Friend </h2>
-          </div>
-          <div id="firend-information">
-
-          </div>
-          <div *ngFor="let friend of allFriends; let i = index">
-            <h3>{{friend.firstName}}   {{friend.lastName}}</h3>
-            <p>Email: {{friend.email}} </p>
-            <p>Phone: {{friend.phone}}</p>
-            <p>Favorit language:  {{friend.languages}} </p>
+  <form #friendForm="ngForm" (ngSubmit)="getFriend()">
+    <div class="container" >    
+      <div class="row text-center">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="row">
+        
+          <div class="col-4" id="left">
+            <div> 
+              <label>First name:</label>
+              <input 
+                type="text" 
+                name="firstName" 
+                #firstName="ngModel" 
+                [(ngModel)]="friend.firstName"
+                [class.err]="firstName.invalid && firstName.touched"
+                pattern="[a-zA-Z ]*"
+                required="[a-zA-Z ]*"
+              >
+            </div>
             
+            <div> 
+              <label>Last name:</label>
+              <input 
+                type="text" 
+                name="lastName" 
+                #lastName="ngModel" 
+                [(ngModel)]="friend.lastName"
+                [class.err]="lastName.invalid && lastName.touched"
+                pattern="[a-zA-Z ]*"
+                required="[a-zA-Z ]*"
+              >
+            </div>      
+            <div> 
+              <label>Email:</label>
+              <input 
+                type="text" 
+                name="email" 
+                #email="ngModel" 
+                [(ngModel)]="friend.email"
+                [class.err]="email.invalid && email.touched"
+                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                required="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              >
+            </div>      
+            <div> 
+              <label>Phone number:</label>
+              <input 
+                type="text" 
+                name="phone" 
+                #phone="ngModel" 
+                [(ngModel)]="friend.phone"
+                [class.err]="phone.invalid && phone.touched"
+                pattern="[0-9]*"
+                required maxlength="10"
+                required minlength="10"
+              >
+            </div>
+            <div>
+              <label> Favourite language: </label>
+              <select 
+                name="languages" 
+                id="languages" 
+                #languages="ngModel" 
+                [(ngModel)]="friend.languages"
+                [class.err]="languages.invalid && languages.touched"
+                pattern="[a-zA-Z ]*"
+                required="[a-zA-Z ]*"
+              >
+                <option> HTML </option>
+                <option> CSS </option>
+                <option> JAVASCRIPT </option>
+                <option> PHP </option>
+              </select>
+            </div>
+            <div>
+              <button class="button" type="submit" [disabled]="friendForm.form.invalid">Submit</button>
+            </div>   
           </div>
-        </div>  
-      </form>        
-    </div>    
-  </div>
+          <div class="col-2"></div>      
+          <div class="col-6" id="right">
+            <div>
+              <h2> Friend </h2>
+            </div>
+            <div id="firend-information">
+
+            </div>
+            <div *ngFor="let friend of allFriends; let i = index">
+              <h3 class="text-center">{{friend.firstName}}   {{friend.lastName}}</h3>
+              <p>Email: {{friend.email}} </p>
+              <p>Phone: {{friend.phone}}</p>
+              <p>Favorit language:  {{friend.languages}} </p>
+              <p>-----------------------------------------------------------------------------------------</p>
+              
+            </div>
+          </div>  
+                
+      </div>    
+    </div>
+  </form>
 </body>
 </html>
